@@ -7,4 +7,8 @@ class Movie < ApplicationRecord
   def avg_actor_age
     self.actors.average(:age)
   end
+
+  def add_actor(movie, actor)
+    movie.actors << actor
+  end
 end

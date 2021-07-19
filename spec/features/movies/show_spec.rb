@@ -39,7 +39,6 @@ RSpec.describe 'Movie show page' do
 
     expect(page).to have_content('Jill Jillian')
     expect(page).to have_content('Nic Cage')
-    expect(page).to_not have_content('Scarlett Jo')
     
     within("#actors") do
       expect(all("#name")[0].text).to eq("Jill Jillian")
@@ -52,9 +51,10 @@ RSpec.describe 'Movie show page' do
   it 'can add actor to movie' do
     visit "/movies/#{@raiders.id}"
 
+    expect(page).to_not have_content('Scarlett Jo')
     expect(page).to have_content('Add actor to movie')
+    save_and_open_page
   end
-  # I do not see any actors listed that are not part of the movie
   # And I see a form to add an actor to this movie
   # When I fill in the form with the name of an actor that exists in the database
   # And I click submit

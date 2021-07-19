@@ -22,6 +22,10 @@ RSpec.describe Movie do
       name: 'Jill Jillian',
       age: 49
     )
+    @jo = Actor.create(
+      name: 'Scarlett Jo',
+      age: 40
+    )
     MovieActor.create(actor: @cage, movie: @raiders)
     MovieActor.create(actor: @jill, movie: @raiders)
   end
@@ -29,6 +33,11 @@ RSpec.describe Movie do
   describe 'methods' do
     it 'calculates average actor age' do
       expect(@raiders.avg_actor_age).to eq(49.5)
+    end
+
+    it 'can add actor to movie' do
+      @raiders.add_actor(@raiders, @jo)
+      expect(@raiders.actors).to eq([@cage, @jill, @jo])
     end
   end
 end
