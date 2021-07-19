@@ -20,4 +20,12 @@
   <%= f.label :name, 'Search by name:' %>
   <%= f.text_field :name %>
   <%= f.submit "Search" %>
+<% end %>
+
+<% @actors.each do |actor| %>
+  <p>Name: <%= actor.name %></p>
+  <%= form_with url: "/movies/#{@movie.id}", method: :patch, local: true do |f| %>
+    <%= f.hidden_field :actor_id, :value => "#{actor.id}" %>
+    <%= f.submit "Add this Actor" %>
+  <% end %>
 <% end %><br>

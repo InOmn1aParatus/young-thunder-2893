@@ -5,4 +5,5 @@ Rails.application.routes.draw do
 
   get '/movies', to: 'movies#index'
   get '/movies/:id', to: 'movies#show'
+  patch 'movies/:id', to: 'movies#update'
 end
