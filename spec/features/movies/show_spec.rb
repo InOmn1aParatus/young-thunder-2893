@@ -53,7 +53,6 @@ RSpec.describe 'Movie show page' do
 
     expect(page).to_not have_content('Scarlett Jo')
     expect(page).to have_content('Add actor to movie')
-    save_and_open_page
   end
   # And I see a form to add an actor to this movie
   # When I fill in the form with the name of an actor that exists in the database
