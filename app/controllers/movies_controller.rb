@@ -5,6 +5,6 @@ class MoviesController < ApplicationController
 
   def show
     @movie = Movie.find(params[:id])
-    @actors = Movie.actors.order(:age)
+    @actors = @movie.actors.order(:age)
   end
 end
