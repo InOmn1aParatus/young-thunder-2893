@@ -5,7 +5,9 @@
   <%= studio.name %><br>
   <%= studio.location %><br>
   <p>
-    Movies by this studio:
-    <%= @ %>
-  </p>
+    Movies by this studio:<br>
+    <%= studio.movies.each do |movie| %>
+      <%= movie.title %><br>
+    <% end %>
+    </p>
 <% end %>

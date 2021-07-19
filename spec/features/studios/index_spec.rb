@@ -19,7 +19,5 @@ RSpec.describe 'Studio index page' do
     expect(page).to have_content('Hollywood')
     expect(page).to have_content('Raiders of the Lost Ark')
   end
-  # When I visit the studio index page
-  # I see a each studio's name and location
-  # And underneath each studio, I see the titles of all of its movies.
+  # Issue: List displays Object information and duplicate entries
 end
